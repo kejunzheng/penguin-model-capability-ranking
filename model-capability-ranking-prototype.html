@@ -270,7 +270,17 @@ const benchmarkMeta={
 'LongBench v2':['结果新增时更新','官方题集 + 多为自报','v2、上下文长度、CoT 与任务切片'],
 'AA-LCR':['持续维护','Artificial Analysis 评测','版本、thinking level、no-tools 口径']
 };
-function benchmarkProfile(name,category){const d=details.find(x=>x[1]===name),m=benchmarkMeta[name]||['待核实','待核实','待核实'];return {category,desc:d?.[2]||'暂无介绍',why:d?.[3]||'暂无不可替代性说明',frequency:m[0],source:m[1],notice:m[2]}}
+const benchmarkNames={
+ 'LMArena':'LMArena Text Overall','AA Index':'Artificial Analysis Intelligence Index','LiveBench':'LiveBench Overall',
+ 'SWE-bench':'SWE-bench Verified','LiveCodeBench':'LiveCodeBench','Aider Polyglot':'Aider Polyglot',
+ 'MMLU-Pro':'MMLU-Pro','GPQA':'GPQA Diamond','SimpleQA':'SimpleQA Verified',
+ 'HLE':'Humanity’s Last Exam','FrontierMath':'FrontierMath','ARC-AGI-2':'ARC-AGI-2',
+ 'MMMU-Pro':'MMMU-Pro','MathVista':'MathVista','VideoMMMU':'VideoMMMU',
+ 'Terminal-Bench':'Terminal-Bench','BFCL v4':'BFCL v4','BrowseComp':'BrowseComp',
+ 'OSWorld':'OSWorld','OSWorld 2.0':'OSWorld 2.0','WorkArena++':'WorkArena++',
+ 'RULER':'RULER','LongBench v2':'LongBench v2','AA-LCR':'AA-LCR'
+};
+function benchmarkProfile(name,category){const canonical=benchmarkNames[name]||name,d=details.find(x=>x[1]===canonical),m=benchmarkMeta[canonical]||['待核实','待核实','待核实'];return {category,desc:d?.[2]||'暂无介绍',why:d?.[3]||'暂无不可替代性说明',frequency:m[0],source:m[1],notice:m[2]}}
 function showBenchmarkTooltip(th){const profile=benchmarkProfile(th.dataset.benchmark,th.dataset.category),tip=document.getElementById('benchmarkTooltip'),wrap=tip.parentElement,thRect=th.getBoundingClientRect(),wrapRect=wrap.getBoundingClientRect();tip.innerHTML=`<p class="tooltip-kicker">${profile.category} · BENCHMARK 档案</p><h3>${th.dataset.benchmark}</h3><p class="tooltip-intro"><b>它测什么：</b>${profile.desc}</p><dl><dt>不可替代性</dt><dd>${profile.why}</dd><dt>更新频次</dt><dd>${profile.frequency}</dd><dt>结果来源</dt><dd>${profile.source}</dd><dt>读榜注意</dt><dd>${profile.notice}</dd></dl>`;const left=Math.min(Math.max(thRect.left-wrapRect.left-10,8),wrapRect.width-304);tip.style.left=`${left}px`;tip.style.top=`${thRect.bottom-wrapRect.top+8}px`;tip.classList.add('show');tip.setAttribute('aria-hidden','false')}
 function hideBenchmarkTooltip(){const tip=document.getElementById('benchmarkTooltip');tip.classList.remove('show');tip.setAttribute('aria-hidden','true')}
 function bindBenchmarkTooltip(){document.querySelectorAll('th[data-benchmark]').forEach(th=>{th.addEventListener('mouseenter',()=>showBenchmarkTooltip(th));th.addEventListener('mouseleave',hideBenchmarkTooltip);th.addEventListener('focusin',()=>showBenchmarkTooltip(th));th.addEventListener('focusout',hideBenchmarkTooltip)})}

@@ -1,0 +1,29 @@
+[
+  {
+    "snapshot_id": "aa_public_web_2026-07-10",
+    "benchmark_ids": [
+      "aa_intelligence_index",
+      "aa_lcr",
+      "gpqa_diamond",
+      "humanitys_last_exam",
+      "mmmu_pro",
+      "terminal_bench"
+    ],
+    "snapshot_at": "2026-07-10T08:34:09.941739+00:00",
+    "benchmark_version": "public-web snapshot",
+    "source_url": "https://artificialanalysis.ai/leaderboards/models",
+    "source_type": "third_party_public_snapshot",
+    "evidence_level": "C",
+    "collected_at": "2026-09-21T01:41:05.810959+00:00",
+    "source_meta": {
+      "endpoint": "llms",
+      "source_type": "page_payload",
+      "source_url": "https://artificialanalysis.ai/leaderboards/models",
+      "source_description": "LLM leaderboard page payload",
+      "parser_version": "public-web-v1",
+      "model_count": 570,
+      "fetched_at": "2026-07-10T08:34:09.941739+00:00"
+    },
+    "limitations": "This snapshot is a public-web collection of Artificial Analysis data. Scores from different benchmark fields retain their own protocol caveats; missing agent configuration prevents direct default comparison for agent tasks."
+  }
+]

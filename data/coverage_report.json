@@ -1,0 +1,224 @@
+{
+  "generated_from": "evaluation_records.json",
+  "snapshot_count": 1,
+  "distinct_model_variants": 559,
+  "evaluation_record_count": 2741,
+  "benchmarks": [
+    {
+      "benchmark_id": "lmarena_text_overall",
+      "display_name": "LMArena",
+      "canonical_name": "LMArena Text Overall",
+      "category": "综合",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://lmarena.ai/leaderboard"
+    },
+    {
+      "benchmark_id": "aa_intelligence_index",
+      "display_name": "AA Index",
+      "canonical_name": "Artificial Analysis Intelligence Index",
+      "category": "综合",
+      "record_count": 557,
+      "ingestion_status": "imported",
+      "official_url": "https://artificialanalysis.ai/leaderboards/models"
+    },
+    {
+      "benchmark_id": "livebench_overall",
+      "display_name": "LiveBench",
+      "canonical_name": "LiveBench Overall",
+      "category": "综合",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://livebench.ai/"
+    },
+    {
+      "benchmark_id": "swe_bench_verified",
+      "display_name": "SWE-bench",
+      "canonical_name": "SWE-bench Verified",
+      "category": "Coding",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://www.swebench.com/"
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "display_name": "LiveCodeBench",
+      "canonical_name": "LiveCodeBench",
+      "category": "Coding",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://livecodebench.github.io/leaderboard.html"
+    },
+    {
+      "benchmark_id": "aider_polyglot",
+      "display_name": "Aider Polyglot",
+      "canonical_name": "Aider Polyglot",
+      "category": "Coding",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://aider.chat/docs/leaderboards/"
+    },
+    {
+      "benchmark_id": "mmlu_pro",
+      "display_name": "MMLU-Pro",
+      "canonical_name": "MMLU-Pro",
+      "category": "知识",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro"
+    },
+    {
+      "benchmark_id": "gpqa_diamond",
+      "display_name": "GPQA",
+      "canonical_name": "GPQA Diamond",
+      "category": "知识",
+      "record_count": 535,
+      "ingestion_status": "imported",
+      "official_url": "https://github.com/idavidrein/gpqa"
+    },
+    {
+      "benchmark_id": "simpleqa_verified",
+      "display_name": "SimpleQA",
+      "canonical_name": "SimpleQA Verified",
+      "category": "知识",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://openai.com/index/introducing-simpleqa/"
+    },
+    {
+      "benchmark_id": "humanitys_last_exam",
+      "display_name": "HLE",
+      "canonical_name": "Humanity’s Last Exam",
+      "category": "推理",
+      "record_count": 531,
+      "ingestion_status": "imported",
+      "official_url": "https://lastexam.ai/"
+    },
+    {
+      "benchmark_id": "frontiermath",
+      "display_name": "FrontierMath",
+      "canonical_name": "FrontierMath",
+      "category": "推理",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://epoch.ai/frontiermath"
+    },
+    {
+      "benchmark_id": "arc_agi_2",
+      "display_name": "ARC-AGI-2",
+      "canonical_name": "ARC-AGI-2",
+      "category": "推理",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://arcprize.org/arc-agi/2/"
+    },
+    {
+      "benchmark_id": "mmmu_pro",
+      "display_name": "MMMU-Pro",
+      "canonical_name": "MMMU-Pro",
+      "category": "视觉理解",
+      "record_count": 223,
+      "ingestion_status": "imported",
+      "official_url": "https://mmmu-benchmark.github.io/"
+    },
+    {
+      "benchmark_id": "mathvista",
+      "display_name": "MathVista",
+      "canonical_name": "MathVista",
+      "category": "视觉理解",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://mathvista.github.io/"
+    },
+    {
+      "benchmark_id": "videommmu",
+      "display_name": "VideoMMMU",
+      "canonical_name": "VideoMMMU",
+      "category": "视觉理解",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://videommmu.github.io/"
+    },
+    {
+      "benchmark_id": "terminal_bench",
+      "display_name": "Terminal-Bench",
+      "canonical_name": "Terminal-Bench",
+      "category": "Agent能力",
+      "record_count": 432,
+      "ingestion_status": "imported",
+      "official_url": "https://www.tbench.ai/leaderboard"
+    },
+    {
+      "benchmark_id": "bfcl_v4",
+      "display_name": "BFCL v4",
+      "canonical_name": "BFCL v4",
+      "category": "Agent能力",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://gorilla.cs.berkeley.edu/leaderboard.html"
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "display_name": "BrowseComp",
+      "canonical_name": "BrowseComp",
+      "category": "Agent能力",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://openai.com/index/browsecomp/"
+    },
+    {
+      "benchmark_id": "osworld",
+      "display_name": "OSWorld",
+      "canonical_name": "OSWorld",
+      "category": "电脑应用",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://os-world.github.io/"
+    },
+    {
+      "benchmark_id": "osworld_2",
+      "display_name": "OSWorld 2.0",
+      "canonical_name": "OSWorld 2.0",
+      "category": "电脑应用",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://os-world.github.io/"
+    },
+    {
+      "benchmark_id": "workarena_plus_plus",
+      "display_name": "WorkArena++",
+      "canonical_name": "WorkArena++",
+      "category": "电脑应用",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://servicenow.github.io/WorkArena/"
+    },
+    {
+      "benchmark_id": "ruler",
+      "display_name": "RULER",
+      "canonical_name": "RULER",
+      "category": "长上下文",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://github.com/NVIDIA/RULER"
+    },
+    {
+      "benchmark_id": "longbench_v2",
+      "display_name": "LongBench v2",
+      "canonical_name": "LongBench v2",
+      "category": "长上下文",
+      "record_count": 0,
+      "ingestion_status": "source_verified_pending_import",
+      "official_url": "https://longbench2.github.io/"
+    },
+    {
+      "benchmark_id": "aa_lcr",
+      "display_name": "AA-LCR",
+      "canonical_name": "AA-LCR",
+      "category": "长上下文",
+      "record_count": 463,
+      "ingestion_status": "imported",
+      "official_url": "https://artificialanalysis.ai/leaderboards/models"
+    }
+  ]
+}

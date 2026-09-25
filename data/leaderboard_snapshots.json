@@ -6,15 +6,14 @@
       "aa_lcr",
       "gpqa_diamond",
       "humanitys_last_exam",
-      "mmmu_pro",
-      "terminal_bench"
+      "mmmu_pro"
     ],
     "snapshot_at": "2026-07-10T08:34:09.941739+00:00",
     "benchmark_version": "public-web snapshot",
     "source_url": "https://artificialanalysis.ai/leaderboards/models",
     "source_type": "third_party_public_snapshot",
     "evidence_level": "C",
-    "collected_at": "2026-09-21T01:41:05.810959+00:00",
+    "collected_at": "2026-09-21T02:09:01.592245+00:00",
     "source_meta": {
       "endpoint": "llms",
       "source_type": "page_payload",
@@ -22,8 +21,392 @@
       "source_description": "LLM leaderboard page payload",
       "parser_version": "public-web-v1",
       "model_count": 570,
-      "fetched_at": "2026-07-10T08:34:09.941739+00:00"
+      "fetched_at": "2026-07-10T08:34:09.941739+00:00",
+      "archived_excluded_benchmark": "terminal_bench rows were superseded by terminal_bench_4 and removed from the 24-item main table."
     },
     "limitations": "This snapshot is a public-web collection of Artificial Analysis data. Scores from different benchmark fields retain their own protocol caveats; missing agent configuration prevents direct default comparison for agent tasks."
+  },
+  {
+    "snapshot_id": "swebench_verified_official_2026-09-21",
+    "benchmark_ids": [
+      "swe_bench_verified"
+    ],
+    "snapshot_at": "2026-09-21T09:50:42+08:00",
+    "benchmark_version": "SWE-bench Verified, official leaderboard",
+    "source_url": "https://www.swebench.com/",
+    "source_type": "official_leaderboard_embedded_json",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T02:09:01.743571+00:00",
+    "source_meta": {
+      "leaderboard": "Verified",
+      "default_view_note": "Official page states Verified is a 500-instance human-filtered subset; bash-only/default mini-SWE-agent rows are retained with agent metadata."
+    },
+    "limitations": "Rows mix different agents and harnesses. The main table should compare only within compatible agent_harness / release fields when needed."
+  },
+  {
+    "snapshot_id": "livebench_overall_official_2026-06-25",
+    "benchmark_ids": [
+      "livebench_overall"
+    ],
+    "snapshot_at": "2026-06-25T00:00:00+00:00",
+    "benchmark_version": "LiveBench-2026-06-25",
+    "source_url": "https://livebench.ai/table_2026_06_25.csv",
+    "source_type": "official_release_csv",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T02:09:01.754559+00:00",
+    "source_meta": {
+      "score_asset": "https://livebench.ai/table_2026_06_25.csv",
+      "category_asset": "https://livebench.ai/categories_2026_06_25.json",
+      "release": "2026-06-25",
+      "rows": 58,
+      "categories": {
+        "Reasoning": [
+          "theory_of_mind",
+          "zebra_puzzle",
+          "spatial",
+          "logic_with_navigation"
+        ],
+        "Coding": [
+          "code_generation",
+          "code_completion"
+        ],
+        "Agentic Coding": [
+          "javascript",
+          "typescript",
+          "python"
+        ],
+        "Mathematics": [
+          "AMPS_Hard",
+          "integrals_with_game",
+          "math_comp",
+          "olympiad"
+        ],
+        "Data Analysis": [
+          "consecutive_events",
+          "tablejoin",
+          "tablereformat"
+        ],
+        "Language": [
+          "connections",
+          "plot_unscrambling",
+          "typos"
+        ],
+        "IF": [
+          "paraphrase",
+          "simplify",
+          "story_generation",
+          "summarize"
+        ]
+      }
+    },
+    "limitations": "Overall score is computed as the mean of category means from the official release CSV; missing task values are skipped rather than imputed."
+  },
+  {
+    "snapshot_id": "livecodebench_generation_official_2025-04-07",
+    "benchmark_ids": [
+      "livecodebench"
+    ],
+    "snapshot_at": "2025-04-07T00:00:00+00:00",
+    "benchmark_version": "LiveCodeBench official generation leaderboard data through 2025-04-07",
+    "source_url": "https://raw.githubusercontent.com/LiveCodeBench/livecodebench.github.io/main/src/mocks/performances_generation.json",
+    "source_type": "official_pages_json",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T03:50:21.479429+00:00",
+    "source_meta": {
+      "models": 22,
+      "question_model_rows": 23210,
+      "metric": "mean pass@1 across official data asset"
+    },
+    "limitations": "LiveCodeBench scores depend on its rolling question window; this import freezes the official asset and aggregates its published pass@1 rows per model."
+  },
+  {
+    "snapshot_id": "bfcl_v4_official_2025-12-16",
+    "benchmark_ids": [
+      "bfcl_v4"
+    ],
+    "snapshot_at": "2025-12-16T00:00:00+00:00",
+    "benchmark_version": "BFCL V4 official result archive 2025-12-16",
+    "source_url": "https://raw.githubusercontent.com/HuanzhiMao/BFCL-Result/main/2025-12-16/score/data_overall.csv",
+    "source_type": "official_result_archive_csv",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T03:50:21.487738+00:00",
+    "source_meta": {
+      "rows": 109,
+      "metric": "Overall Acc",
+      "archive": "HuanzhiMao/BFCL-Result"
+    },
+    "limitations": "Rows may differ by FC/Prompt calling protocol and reasoning mode. These are retained as configuration metadata and must not be averaged across protocols."
+  },
+  {
+    "snapshot_id": "longbench_v2_official_2025-05-06",
+    "benchmark_ids": [
+      "longbench_v2"
+    ],
+    "snapshot_at": "2025-05-06T00:00:00+00:00",
+    "benchmark_version": "LongBench v2 official leaderboard, w/ CoT",
+    "source_url": "https://longbench2.github.io/",
+    "source_type": "official_leaderboard_html",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T03:50:21.492963+00:00",
+    "source_meta": {
+      "rows": 38,
+      "metric": "Overall accuracy w/ CoT",
+      "captured_from": "official website"
+    },
+    "limitations": "LongBench v2 has distinct w/o CoT and w/ CoT tracks. This import uses w/ CoT as the official default view and retains that protocol; entries must not be averaged with w/o CoT."
+  },
+  {
+    "snapshot_id": "aider_polyglot_official_2026-09-21",
+    "benchmark_ids": [
+      "aider_polyglot"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "Aider Polyglot maintainer leaderboard YAML",
+    "source_url": "https://raw.githubusercontent.com/Aider-AI/aider/main/aider/website/_data/polyglot_leaderboard.yml",
+    "source_type": "official_repository_yaml",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.110294+00:00",
+    "source_meta": {
+      "rows": 66,
+      "metric": "pass_rate_2"
+    },
+    "limitations": "Scores depend on Aider version, edit format, test date and model reasoning settings. Multi-model editor combinations are excluded from the default single-model import."
+  },
+  {
+    "snapshot_id": "mmlu_pro_official_submission_2026-09-21",
+    "benchmark_ids": [
+      "mmlu_pro"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "MMLU-Pro official leaderboard submission dataset",
+    "source_url": "https://huggingface.co/datasets/TIGER-Lab/mmlu_pro_leaderboard_submission/resolve/main/results.csv",
+    "source_type": "official_dataset_csv",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.114161+00:00",
+    "source_meta": {
+      "rows": 262,
+      "metric": "Overall"
+    },
+    "limitations": "The maintainer dataset contains both TIGER-Lab runs and self-reported submissions. Self-reported rows are retained with B evidence and must not be treated as identical to maintainer-run results."
+  },
+  {
+    "snapshot_id": "mathvista_official_testmini_2026-09-21",
+    "benchmark_ids": [
+      "mathvista"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "MathVista official README leaderboard, testmini",
+    "source_url": "https://raw.githubusercontent.com/lupantech/MathVista/main/README.md",
+    "source_type": "official_repository_markdown",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.118539+00:00",
+    "source_meta": {
+      "rows": 61,
+      "metric": "ALL"
+    },
+    "limitations": "This is the official testmini leaderboard. Methods and submissions vary; detailed cells are not averaged or inferred."
+  },
+  {
+    "snapshot_id": "videommmu_official_2026-09-21",
+    "benchmark_ids": [
+      "videommmu"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "VideoMMMU maintainer README leaderboard",
+    "source_url": "https://raw.githubusercontent.com/EvolvingLMMs-Lab/VideoMMMU/main/README.md",
+    "source_type": "official_repository_markdown",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.122194+00:00",
+    "source_meta": {
+      "rows": 28,
+      "metric": "Overall"
+    },
+    "limitations": "The official table has incomplete sub-scores for some rows and mixed submission provenance. Overall is retained without filling absent sub-scores."
+  },
+  {
+    "snapshot_id": "osworld_verified_official_2026-09-21",
+    "benchmark_ids": [
+      "osworld"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "OSWorld-Verified official result table",
+    "source_url": "https://os-world.github.io/static/data/osworld_verified_results.xlsx",
+    "source_type": "official_leaderboard_xlsx",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.301071+00:00",
+    "source_meta": {
+      "rows": 45,
+      "metric": "Success rate",
+      "filter": "100 steps; no accessibility tree; no coding action; single rollout"
+    },
+    "limitations": "OSWorld results vary materially with step budget, extra tool access and rollout count. This import uses only the declared no-extra-tools, single-rollout, 100-step cohort; other official configurations are deliberately excluded from default ranking."
+  },
+  {
+    "snapshot_id": "osworld_v2_official_v21_2026-09-21",
+    "benchmark_ids": [
+      "osworld_2"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "OSWorld 2.0 v2.1 official results",
+    "source_url": "https://osworld-v2.xlang.ai/static/data/leaderboard/official-results.json",
+    "source_type": "official_leaderboard_json",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.306580+00:00",
+    "source_meta": {
+      "rows": 5,
+      "metric": "binaryAccuracy",
+      "filter": "v2.1; full set; 500 steps"
+    },
+    "limitations": "OSWorld 2.0 values change by release version, dataset scope, step budget, reasoning setting and tool mode. Only the stated current v2.1/full/500-step protocol is imported; no variants are averaged."
+  },
+  {
+    "snapshot_id": "arc_agi_2_official_v2_semi_private_2026-09-21",
+    "benchmark_ids": [
+      "arc_agi_2"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "ARC-AGI-2 v2_Semi_Private official leaderboard data",
+    "source_url": "https://arcprize.org/media/data/evaluations.json",
+    "source_type": "official_leaderboard_json",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.312946+00:00",
+    "source_meta": {
+      "rows": 224,
+      "metric": "score",
+      "dataset_id": "v2_Semi_Private"
+    },
+    "limitations": "ARC-AGI-2 result rows represent distinct effort, tool and provider-adapter configurations. This source is imported as official evidence; SKU derivation must treat those controls as configuration, not separate products."
+  },
+  {
+    "snapshot_id": "ruler_maintainer_readme_2026-09-21",
+    "benchmark_ids": [
+      "ruler"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "RULER maintainer README main-results table",
+    "source_url": "https://raw.githubusercontent.com/Infini-AI-Lab/RULER/main/README.md",
+    "source_type": "official_repository_markdown",
+    "evidence_level": "B",
+    "collected_at": "2026-09-21T06:08:30.316766+00:00",
+    "source_meta": {
+      "rows": 34,
+      "metric": "wAvg. (dec)"
+    },
+    "limitations": "This is the frozen maintainer README table, not a continuously maintained public submission leaderboard. Scores span 13 synthetic tasks and vary by context length, model template and inference configuration; the declared wAvg. (dec) column is retained without recomputation."
+  },
+  {
+    "snapshot_id": "lmarena_text_official_2026-09-13",
+    "benchmark_ids": [
+      "lmarena_text_overall"
+    ],
+    "snapshot_at": "2026-09-13T00:00:00+00:00",
+    "benchmark_version": "LMArena text/latest, category=overall",
+    "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+    "source_type": "official_dataset_parquet",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T06:08:30.520284+00:00",
+    "source_meta": {
+      "rows": 402,
+      "metric": "Elo rating"
+    },
+    "limitations": "LMArena is a dynamic crowdsourced blind-comparison leaderboard. This import freezes the text/latest overall slice; rating, vote count and confidence interval must be read together."
+  },
+  {
+    "snapshot_id": "terminal_bench_4_official_2026-09-21",
+    "benchmark_ids": [
+      "terminal_bench_4"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "Terminal-Bench 4.0.0; 66 tasks",
+    "source_url": "https://github.com/harbor-framework/terminal-bench/tree/main/leaderboard/submissions",
+    "source_type": "official_repository_submission_json",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T07:11:35.971390+00:00",
+    "source_meta": {
+      "rows": 11,
+      "metric": "accuracy / resolution rate",
+      "task_count": 66,
+      "timeout": "8 hours",
+      "trials": "5 per task"
+    },
+    "limitations": "Terminal-Bench 4.0 rows are agent-system results. Harness, agent version, reasoning effort, tokens, cost and trial count are mandatory evidence fields; no cross-harness normalization is performed. Scores are not comparable to Terminal-Bench 2.x/3.x."
+  },
+  {
+    "snapshot_id": "gaia_official_public_results_2026-09-21",
+    "benchmark_ids": [
+      "gaia"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "GAIA 2023 test public-results table",
+    "source_url": "https://huggingface.co/datasets/gaia-benchmark/results_public",
+    "source_type": "official_dataset_parquet",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T07:11:36.114248+00:00",
+    "source_meta": {
+      "rows": 3714,
+      "metric": "overall exact-match accuracy",
+      "levels": [
+        1,
+        2,
+        3
+      ]
+    },
+    "limitations": "GAIA submits complete agents, not bare models. System prompt, tool stack and external URL are preserved when declared. Compare only within comparable systems; no attribution of an agent score solely to its underlying model."
+  },
+  {
+    "snapshot_id": "simpleqa_verified_epoch_2026-09-21",
+    "benchmark_ids": [
+      "simpleqa_verified"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "SimpleQA Verified; 1,000 prompts; no-tools parametric factuality; Epoch Benchmarking Hub track",
+    "source_url": "https://epoch.ai/benchmarks/simple-qa-verified",
+    "source_type": "epoch_official_benchmark_hub_csv",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T08:16:59.312189+00:00",
+    "source_meta": {
+      "rows": 80,
+      "metric": "Best score across scorers (%)",
+      "task": "SimpleQA Verified",
+      "raw_file": "epoch-benchmarks-master-2026-09-21.csv"
+    },
+    "limitations": "Epoch and Kaggle/Google can expose different headline metrics and subsets. This column uses only the frozen Epoch Benchmarking Hub track and does not mix it with Kaggle F1 rows."
+  },
+  {
+    "snapshot_id": "frontiermath_tiers_1_3_v2_epoch_2026-09-21",
+    "benchmark_ids": [
+      "frontiermath"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "FrontierMath Tiers 1-3 v2 private set; 295 problems; June 12 2026 corrected release",
+    "source_url": "https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2",
+    "source_type": "epoch_official_benchmark_hub_csv",
+    "evidence_level": "A",
+    "collected_at": "2026-09-21T08:16:59.353023+00:00",
+    "source_meta": {
+      "rows": 108,
+      "metric": "Accuracy (%)",
+      "task": "FrontierMath-Tiers-1-3-v2-Private",
+      "raw_file": "epoch-benchmarks-master-2026-09-21.csv"
+    },
+    "limitations": "Scores are not comparable to pre-v2 FrontierMath or Tier 4. The private set cannot be independently re-run; use only this frozen Epoch-administered track."
+  },
+  {
+    "snapshot_id": "androidworld_official_sheet_2026-09-21",
+    "benchmark_ids": [
+      "androidworld"
+    ],
+    "snapshot_at": "2026-09-21T00:00:00+08:00",
+    "benchmark_version": "AndroidWorld official community leaderboard; 116 tasks across 20 Android apps",
+    "source_url": "https://docs.google.com/spreadsheets/d/1cchzP9dlTZ3WXQTfYNhh3avxoLipqHN75v1Tb86uhHo/edit?gid=0#gid=0",
+    "source_type": "official_google_sheet_csv_export",
+    "evidence_level": "C",
+    "collected_at": "2026-09-21T08:16:59.402108+00:00",
+    "source_meta": {
+      "rows": 46,
+      "metric": "Success Rate (pass@1)",
+      "raw_file": "androidworld-official-leaderboard-2026-09-21.csv"
+    },
+    "limitations": "AndroidWorld's official sheet explicitly warns that results are community-submitted and not independently verified. Imported as C-level Agent-system evidence; compare only with declared screen representation, trials, and submission notes."
   }
 ]

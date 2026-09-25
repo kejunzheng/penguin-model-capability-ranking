@@ -72,23 +72,13 @@ def main():
     for model in source["models"]:
         canonical = model["name"].strip()
         creator = model.get("creator") or {}
-        models[canonical] = {
-            "canonical_name": canonical,
-            "raw_names": [canonical],
-            "organization": creator.get("name"),
-            "organization_slug": creator.get("slug"),
-            "organization_country": creator.get("country"),
-            "model_release_date": model.get("release_date"),
-            "open_weights": (model.get("open_weights") or {}).get("is_open_weights"),
-            "reasoning_model": model.get("reasoning_model"),
-            "source_model_id": model.get("id"),
-        }
         evaluations = model.get("evaluations") or {}
+        model_records = []
         for field, config in FIELD_MAP.items():
             score = value_to_float(evaluations.get(field))
             if score is None:
                 continue
-            records.append({
+            model_records.append({
                 "record_id": f"{snapshot_id}:{config['benchmark_id']}:{model.get('id')}",
                 "snapshot_id": snapshot_id,
                 "benchmark_id": config["benchmark_id"],
@@ -114,6 +104,20 @@ def main():
                 "is_estimated": evaluations.get("artificial_analysis_intelligence_index_is_estimated") if field == "artificial_analysis_intelligence_index" else None,
                 "ingestion_note": "Imported from raw snapshot without inferring missing evaluation protocol fields.",
             })
+        if not model_records:
+            continue
+        models[canonical] = {
+            "canonical_name": canonical,
+            "raw_names": [canonical],
+            "organization": creator.get("name"),
+            "organization_slug": creator.get("slug"),
+            "organization_country": creator.get("country"),
+            "model_release_date": model.get("release_date"),
+            "open_weights": (model.get("open_weights") or {}).get("is_open_weights"),
+            "reasoning_model": model.get("reasoning_model"),
+            "source_model_id": model.get("id"),
+        }
+        records.extend(model_records)
 
     for benchmark_id in {record["benchmark_id"] for record in records}:
         ranked = sorted(
